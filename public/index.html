@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html xmlns:ng="http://angularjs.org" ng-app="app">
+
+<script src="js/ext/jquery-1.8.2.min.js"></script>
+<script src="js/ext/angular.min.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/services.js"></script>
+
+<style>
+
+  .container {
+    overflow: hidden;
+    height: 310px;
+  }
+
+  .group {
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease-in-out;
+  }
+
+  .group:first-child {
+    margin-top: -60px;
+  }
+
+  .item {
+    display: block;
+    width: 200px;
+    height: 20px;
+    background-color: #eee;
+    margin: 10px;
+  }
+
+
+  .spacer {
+    height: 0;
+
+  }
+</style>
+
+<body>
+<div animated class="container" ng-controller="ListCtrl">
+  <div class="group" ng-repeat="group in itemGroups">
+    <div class="item" ng-repeat="item in group">{{item.text}}</div>
+  </div>
+</div>
+</body>
+
+</html>
